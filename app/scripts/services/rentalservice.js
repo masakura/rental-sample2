@@ -28,6 +28,18 @@ angular.module('app7App')
           }
 
           return amount;
+        } else if (item.type === 'kids') {
+          // 子供向け
+
+          // 三日目までは 300 円
+          var amountKids = 300;
+
+          // 四日目からは一日毎に 150 円
+          if (days > 3) {
+            amountKids += (days - 3) * 150;
+          }
+
+          return amountKids;
         }
       }
     };
